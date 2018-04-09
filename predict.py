@@ -35,7 +35,6 @@ def oneHotIris(val):
 
 with open('iris.csv') as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
-    i = 0
     for row in readCSV:
         if row:
             addTest = 0 == random.randint(0, 9)
@@ -43,7 +42,6 @@ with open('iris.csv') as csvfile:
             yadd = ytest if addTest else ytrain
             xadd.append([float(val) for val in row[0:4]])
             yadd.append(oneHotIris(row[4]))
-            i += 1
 
 data = {x: xtrain, y: ytrain}
 testing = {x: xtest, y: ytest}
